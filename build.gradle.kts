@@ -32,7 +32,7 @@ dependencies {
 //	implementation("org.springframework.boot:spring-boot-starter-data-elasticsearch")
 	implementation("org.springframework.boot:spring-boot-starter-data-jdbc")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-//	implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
+	implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
 //	implementation("org.springframework.boot:spring-boot-starter-data-redis")
 	implementation("org.springframework.boot:spring-boot-starter-graphql")
 	implementation("org.springframework.boot:spring-boot-starter-hateoas")
@@ -44,7 +44,7 @@ dependencies {
 	implementation("io.zipkin.reporter2:zipkin-reporter-brave")
 //	implementation("org.apache.kafka:kafka-streams")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
-	implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter:3.0.0")
+//	implementation("org.mybatis.spring.boot:mybatis-spring-boot-starter")
 	implementation("org.springframework.cloud:spring-cloud-starter-circuitbreaker-resilience4j")
 	implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
 //	implementation("org.springframework.kafka:spring-kafka")
@@ -53,13 +53,18 @@ dependencies {
 	runtimeOnly("com.h2database:h2")
 //	runtimeOnly("com.mysql:mysql-connector-j")
 	annotationProcessor("org.projectlombok:lombok")
-	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testImplementation("org.springframework:spring-webflux")
 //	testImplementation("org.springframework.amqp:spring-rabbit-test")
 	testImplementation("org.springframework.graphql:spring-graphql-test")
 	testImplementation("org.springframework.kafka:spring-kafka-test")
 	testImplementation("org.springframework.restdocs:spring-restdocs-mockmvc")
 	testImplementation("org.springframework.security:spring-security-test")
+	runtimeOnly("com.mysql:mysql-connector-j")
+	implementation("org.mongodb:mongodb-driver-sync")
+
+	//공통사용
+	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
+	testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
 dependencyManagement {
