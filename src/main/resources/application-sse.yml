@@ -1,0 +1,42 @@
+sse:
+  # Reactive 서버 설정
+  reactive:
+    base-url: ${REACTIVE_SERVER_URL:http://localhost:8080}
+
+  # 원격 SSE 서버 설정
+  remote:
+    base-url: ${REMOTE_SSE_URL:http://localhost:8080}
+    connect-timeout: 5000
+    read-timeout: 300000
+
+  # SSE 클라이언트 설정
+  client:
+    max-connections: 100
+    connection-timeout: 30000
+    keep-alive-interval: 30000
+
+  # SSE 에미터 설정
+  emitter:
+    default-timeout: 60000
+    max-timeout: 300000
+    reconnect-time: 3000
+
+# WebClient 설정
+webclient:
+  max-in-memory-size: 10485760  # 10MB
+  connect-timeout: 5000
+  read-timeout: 60000
+  write-timeout: 60000
+
+# 서버 목록 (로드밸런싱용)
+servers:
+  reactive:
+    - url: http://localhost:8080
+      weight: 50
+      health-check: /health
+    - url: http://localhost:8081
+      weight: 30
+      health-check: /health
+    - url: http://localhost:8082
+      weight: 20
+      health-check: /health

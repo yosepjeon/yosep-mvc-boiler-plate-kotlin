@@ -27,6 +27,7 @@ val snippetsDir = file("build/generated-snippets")
 val springCloudVersion = "2022.0.2"
 
 dependencies {
+	implementation("org.springframework.boot:spring-boot-starter-webflux")
 	implementation("org.springframework.boot:spring-boot-starter-actuator")
 //	implementation("org.springframework.boot:spring-boot-starter-amqp")
 //	implementation("org.springframework.boot:spring-boot-starter-data-elasticsearch")
@@ -36,7 +37,7 @@ dependencies {
 //	implementation("org.springframework.boot:spring-boot-starter-data-redis")
 	implementation("org.springframework.boot:spring-boot-starter-graphql")
 	implementation("org.springframework.boot:spring-boot-starter-hateoas")
-	implementation("org.springframework.boot:spring-boot-starter-security")
+//	implementation("org.springframework.boot:spring-boot-starter-security")
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.boot:spring-boot-starter-websocket")
 	implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
@@ -58,7 +59,7 @@ dependencies {
 	testImplementation("org.springframework.graphql:spring-graphql-test")
 	testImplementation("org.springframework.kafka:spring-kafka-test")
 	testImplementation("org.springframework.restdocs:spring-restdocs-mockmvc")
-	testImplementation("org.springframework.security:spring-security-test")
+//	testImplementation("org.springframework.security:spring-security-test")
 	runtimeOnly("com.mysql:mysql-connector-j")
 	implementation("org.mongodb:mongodb-driver-sync")
 

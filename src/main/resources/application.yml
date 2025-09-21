@@ -1,5 +1,11 @@
 profile: local
 
+server:
+  shutdown: graceful
+  port: 20001
+  logging:
+    access: true
+
 spring:
   data:
     mongodb:
