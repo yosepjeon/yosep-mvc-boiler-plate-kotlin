@@ -26,6 +26,17 @@ class SseProxyController(
 ) {
     private val logger = LoggerFactory.getLogger(this::class.java)
 
+    @GetMapping("/test/{value}")
+    fun testSse(
+        @PathVariable value: Long
+    ): ResponseEntity<Long> {
+
+        Thread.sleep(1000 * value)
+
+        return ResponseEntity.ok()
+            .body(value)
+    }
+
     @PostMapping(
         value = ["/reactive/parallel-tasks/sse-emitter"],
         produces = [MediaType.TEXT_EVENT_STREAM_VALUE],
